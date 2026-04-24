@@ -1,0 +1,278 @@
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --line: #d9dee8;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #14b8a6;
+  --warn: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.brand {
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.hero,
+.profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 32px;
+  align-items: center;
+  min-height: 360px;
+}
+
+.hero h1,
+.profile-hero h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.hero p,
+.profile-hero p {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+}
+
+.hero-panel span {
+  display: block;
+  padding: 12px 14px;
+  border-left: 4px solid var(--accent);
+  background: #eefbf8;
+  color: #134e4a;
+  font-weight: 800;
+}
+
+.hero-panel span:nth-child(even) {
+  border-left-color: var(--warn);
+  background: #fff7ed;
+  color: #7c2d12;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading h2,
+.section h2 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 0;
+}
+
+.member-grid,
+.work-list,
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.member-card,
+.work-list article,
+.two-column article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 20px;
+}
+
+.member-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.avatar,
+.profile-photo {
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-weight: 900;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+}
+
+.profile-photo {
+  width: 240px;
+  height: 240px;
+  font-size: 80px;
+}
+
+.member-card h3,
+.work-list h3 {
+  margin: 0 0 4px;
+}
+
+.member-card p,
+.work-list p,
+.two-column p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.button.primary {
+  margin-top: 18px;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.button-row .button.primary {
+  margin-top: 0;
+}
+
+.button:hover {
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.button.primary:hover {
+  color: white;
+  background: var(--primary-dark);
+}
+
+.task-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .nav,
+  .member-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .hero,
+  .profile-hero,
+  .member-grid,
+  .work-list,
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1,
+  .profile-hero h1 {
+    font-size: 36px;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    font-size: 56px;
+  }
+
+  .member-card {
+    display: flex;
+  }
+}
